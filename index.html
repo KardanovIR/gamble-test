@@ -54,7 +54,7 @@
     }
 
     .card__face--back {
-        background: blue;
+        background: #17212c;
         transform: rotateY(180deg);
     }
 
@@ -68,32 +68,66 @@
         width: 100%;
     }
 
+    .card__face img {
+        max-width: 200px;
+        margin-top: 50px;
+    }
+
+    .prize{
+        line-height: 20px;
+    }
 </style>
 <body>
 <div class="wrapper">
     <div class="row">
         <div class="card first">
             <div class="card__face card__face--front">?</div>
-            <div class="card__face card__face--back">back</div>
+            <div class="card__face card__face--back">
+                <img src="./star.png">
+                <p class="prize"></p>
+            </div>
         </div>
         <div class="card">
             <div class="card__face card__face--front">?</div>
-            <div class="card__face card__face--back">back</div>
+            <div class="card__face card__face--back">
+                <img src="./star.png">
+                <p class="prize"></p>
+            </div>
         </div>
 
     </div>
     <div class="row">
         <div class="card first">
             <div class="card__face card__face--front">?</div>
-            <div class="card__face card__face--back">back</div>
+            <div class="card__face card__face--back">
+                <img src="./star.png">
+                <p class="prize"></p>
+            </div>
         </div>
         <div class="card">
             <div class="card__face card__face--front">?</div>
-            <div class="card__face card__face--back">back</div>
+            <div class="card__face card__face--back">
+                <img src="./star.png">
+                <p class="prize"></p>
+            </div>
         </div>
     </div>
 </div>
 <script>
+    let listOfPrizes = ['Prize 1', 'Prize 2', 'Prize 3', 'Prize 4', 'Prize 5', 'Prize 6'];
+
+    const getRandomPrize = () => {
+        const optionsE = Math.floor(Math.random() * listOfPrizes.length);
+        return listOfPrizes.splice(optionsE, 1)[0];
+    }
+
+    const prizes = document.querySelectorAll('.prize');
+    prizes.forEach(prize => {
+        prize.innerHTML = getRandomPrize();
+    })
+
+
+
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
         card.addEventListener('click', function () {
