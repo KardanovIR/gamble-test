@@ -1,0 +1,105 @@
+<html>
+<title>Here is the game</title>
+<style>
+    body {
+        background-color: #2d435b;
+    }
+
+    /*.scene {*/
+    /*    width: 200px;*/
+    /*    height: 260px;*/
+    /*    border: 1px solid #CCC;*/
+    /*    margin: 40px 0;*/
+    /*    perspective: 600px;*/
+    /*}*/
+
+    .card {
+        position: relative;
+        width: 300px;
+        height: 340px;
+        /*width: calc(25% - 100px);*/
+        /*height: calc(25% - 60px);*/
+        cursor: pointer;
+        transform-style: preserve-3d;
+        transform-origin: center right;
+        transition: transform 1s;
+    }
+
+    .card.is-flipped {
+        transform: translateX(-100%) rotateY(-180deg);
+    }
+
+    .card.first {
+        margin-right: 50px;
+    }
+
+    .card__face {
+        position: absolute;
+        width: 300px;
+        height: 340px;
+        /*width: calc(25% - 100px);*/
+        /*height: calc(25% - 60px);*/
+        line-height: 340px;
+        color: white;
+        text-align: center;
+        /*font-weight: bold;*/
+        font-size: 40px;
+        backface-visibility: hidden;
+    }
+
+    .card__face--front {
+        background: #17212c;
+        font-size: 150px;
+        font-family: sans-serif;
+    }
+
+    .card__face--back {
+        background: blue;
+        transform: rotateY(180deg);
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        align-content: stretch;
+        justify-content: center;
+        height: 50%;
+        align-items: center;
+        width: 100%;
+    }
+
+</style>
+<body>
+<div class="wrapper">
+    <div class="row">
+        <div class="card first">
+            <div class="card__face card__face--front">?</div>
+            <div class="card__face card__face--back">back</div>
+        </div>
+        <div class="card">
+            <div class="card__face card__face--front">?</div>
+            <div class="card__face card__face--back">back</div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="card first">
+            <div class="card__face card__face--front">?</div>
+            <div class="card__face card__face--back">back</div>
+        </div>
+        <div class="card">
+            <div class="card__face card__face--front">?</div>
+            <div class="card__face card__face--back">back</div>
+        </div>
+    </div>
+</div>
+<script>
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.addEventListener('click', function () {
+            card.classList.toggle('is-flipped');
+        });
+    })
+</script>
+</body>
+</html>
