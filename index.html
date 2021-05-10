@@ -126,14 +126,16 @@
         prize.innerHTML = getRandomPrize();
     })
 
-
+    let alreadyOpened = false;
 
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
         card.addEventListener('click', function () {
+            if (alreadyOpened) return alert('You have flipped a card already!');
             card.classList.toggle('is-flipped');
+            alreadyOpened = true;
         });
-    })
+    });
 </script>
 </body>
 </html>
