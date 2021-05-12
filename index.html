@@ -1,85 +1,105 @@
-<html>
-<title>Here is the game</title>
-<style>
-    body {
-        background-color: #2d435b;
-    }
+<html lang="">
+<head>
+    <title>Here is the game</title>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-    /*.scene {*/
-    /*    width: 200px;*/
-    /*    height: 260px;*/
-    /*    border: 1px solid #CCC;*/
-    /*    margin: 40px 0;*/
-    /*    perspective: 600px;*/
-    /*}*/
+    <style>
+        body {
+            /*background-color: #2d435b;*/
+            background-image: linear-gradient(to top right, rgb(101, 115, 255), rgb(102, 133, 244), rgb(103, 152, 233), rgb(104, 170, 222), rgb(105, 189, 211), rgb(106, 207, 200), rgb(116, 213, 168), rgb(125, 218, 136), rgb(135, 224, 104), rgb(144, 229, 72), rgb(154, 235, 40), rgb(163, 240, 8));
+        }
 
-    .card {
-        position: relative;
-        width: 300px;
-        height: 340px;
-        /*width: calc(25% - 100px);*/
-        /*height: calc(25% - 60px);*/
-        cursor: pointer;
-        transform-style: preserve-3d;
-        transform-origin: center right;
-        transition: transform 1s;
-    }
+        /*.scene {*/
+        /*    width: 200px;*/
+        /*    height: 260px;*/
+        /*    border: 1px solid #CCC;*/
+        /*    margin: 40px 0;*/
+        /*    perspective: 600px;*/
+        /*}*/
 
-    .card.is-flipped {
-        transform: translateX(-100%) rotateY(-180deg);
-    }
+        .card {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transform-origin: center right;
+            transition: transform 1s;
+        }
 
-    .card.first {
-        margin-right: 50px;
-    }
+        .card.is-flipped {
+            transform: translateX(-100%) rotateY(-180deg);
+        }
 
-    .card__face {
-        position: absolute;
-        width: 300px;
-        height: 340px;
-        /*width: calc(25% - 100px);*/
-        /*height: calc(25% - 60px);*/
-        line-height: 340px;
-        color: white;
-        text-align: center;
-        /*font-weight: bold;*/
-        font-size: 40px;
-        backface-visibility: hidden;
-        border-radius: 50px;
-    }
+        .card.first {
+            margin-right: 100px;
+        }
 
-    .card__face--front {
-        background: #17212c;
-        font-size: 150px;
-        font-family: sans-serif;
-    }
+        .card__face {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            -webkit-box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.75);
+            line-height: 350px;
+            color: #00fd5f;
+            text-align: center;
+            font-size: 40px;
+            backface-visibility: hidden;
+            border-radius: 50px;
+        }
 
-    .card__face--back {
-        background: #17212c;
-        transform: rotateY(180deg);
-    }
+        .card__face--front {
+            background: #ffffff;
+            font-size: 150px;
+            font-family: 'Roboto', sans-serif;
+        }
 
-    .row {
-        display: flex;
-        flex-direction: row;
-        align-content: stretch;
-        justify-content: center;
-        height: 50%;
-        align-items: center;
-        width: 100%;
-    }
+        .card__face--back {
+            background: #ffffff;
+            transform: rotateY(180deg);
+        }
 
-    .card__face img {
-        max-width: 200px;
-        margin-top: 50px;
-    }
+        .row {
+            display: flex;
+            flex-direction: row;
+            align-content: stretch;
+            justify-content: center;
+            height: 35%;
+            align-items: center;
+            width: 100%;
+        }
 
-    .prize{
-        line-height: 20px;
-    }
-</style>
+        .first-row {
+            display: flex;
+            flex-direction: row;
+            align-content: stretch;
+            justify-content: center;
+            height: 30%;
+            align-items: center;
+            width: 100%;
+        }
+
+        .card__face img {
+            max-width: 200px;
+            margin-top: 50px;
+        }
+
+        .prize {
+            line-height: 20px;
+        }
+    </style>
+</head>
 <body>
 <div class="wrapper">
+    <div class="first-row">
+        <div style="text-align: center; font-size: 100px;">
+            🎉
+        </div>
+    </div>
     <div class="row">
         <div class="card first">
             <div class="card__face card__face--front">?</div>
