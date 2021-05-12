@@ -2,14 +2,23 @@
 <head>
     <title>Here is the game</title>
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
 
     <style>
+        @font-face {
+            font-family: 'Segoe UI';
+            src: url('SegoeUIBlack.woff2') format('woff2'),
+            url('SegoeUIBlack.woff') format('woff');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+
         body {
             /*background-color: #2d435b;*/
             background-image: linear-gradient(to top right, rgb(101, 115, 255), rgb(102, 133, 244), rgb(103, 152, 233), rgb(104, 170, 222), rgb(105, 189, 211), rgb(106, 207, 200), rgb(116, 213, 168), rgb(125, 218, 136), rgb(135, 224, 104), rgb(144, 229, 72), rgb(154, 235, 40), rgb(163, 240, 8));
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Helvetica', sans-serif;
         }
 
         /*.scene {*/
@@ -56,6 +65,9 @@
         .card__face--front {
             background: #ffffff;
             font-size: 150px;
+            font-family: 'Segoe UI', sans-serif;
+            /*color: #7BC16F;*/
+            color: #1d9b49;
         }
 
         .card__face--back {
